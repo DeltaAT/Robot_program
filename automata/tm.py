@@ -50,11 +50,8 @@ dtm = DTM(
 """
 import pygraphviz as pgv
 
-# DTM hat (anders als DFA/NFA) keine show_diagram-Methode,
-# daher bauen wir den Graphen aus den Transitionen selbst.
 graph = pgv.AGraph(directed=True, rankdir="LR")
 
-# unsichtbarer Startknoten -> Pfeil auf den Startzustand
 graph.add_node("__start__", shape="point", label="")
 graph.add_edge("__start__", dtm.initial_state)
 
@@ -64,7 +61,6 @@ for state in dtm.states:
         shape="doublecircle" if state in dtm.final_states else "circle",
     )
 
-# Mehrfachübergänge zwischen denselben Zuständen zu einem Label zusammenfassen
 edge_labels = {}
 for state, moves in dtm.transitions.items():
     for read_sym, (next_state, write_sym, direction) in moves.items():
