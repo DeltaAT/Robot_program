@@ -22,6 +22,9 @@ dfa = DFA(
     }
 )
 
+def check_robot(robot:str):
+    return dfa.accepts_input(robot)
+
 # print(dfa.accepts_input("11##FF"))
 
 def export_image(path="../img/dfa.png"):
