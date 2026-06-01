@@ -27,4 +27,4 @@ dfa = DFA(
 def export_image(path="../img/dfa.png"):
     dfa.show_diagram(path=path)
 
-export_image()
+# export_image()
