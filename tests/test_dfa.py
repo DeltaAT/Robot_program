@@ -1,7 +1,7 @@
 from automatas.dfa import check_robot
 import pytest
-# Tests für den DFA
 
+# Tests für den DFA
 @pytest.mark.parametrize("robot", [
     "1#",
     "1#F",

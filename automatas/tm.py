@@ -46,6 +46,9 @@ dtm = DTM(
     final_states={'zf'},
 )
 
+def move_robot(robot):
+    return dtm.accepts_input(robot)
+
 # Exportieren des DTM
 """
 import pygraphviz as pgv
